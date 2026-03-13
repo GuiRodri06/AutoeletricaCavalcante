@@ -1,0 +1,48 @@
+<footer class="bg-dark text-white pt-5 pb-3">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6">
+                <h5 class="mb-4 text-warning fw-bold">SOBRE A AUTOELÉTRICA</h5>
+                <p class="text-secondary pe-lg-5">Sua oficina de confiança para toda a parte elétrica automotiva. Tecnologia de ponta e transparência em cada diagnóstico.</p>
+                <div class="fs-4">
+                    <i class="bi bi-facebook me-2"></i>
+                    <i class="bi bi-instagram me-2"></i>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6">
+                <h5 class="mb-4 text-warning fw-bold">LINKS</h5>
+                <ul class="list-unstyled text-secondary">
+                    <li class="mb-2"><a href="/" class="text-decoration-none text-secondary">Início</a></li>
+                    <li class="mb-2"><a href="#servicos" class="text-decoration-none text-secondary">Serviços</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                <h5 class="mb-4 text-warning fw-bold">ONDE ESTAMOS</h5>
+                <p class="text-secondary mb-2">
+                    <i class="bi bi-geo-alt-fill text-warning me-2"></i> <%= empresa.endereco %>
+                </p>
+                <p class="text-secondary mb-2">
+                    <i class="bi bi-whatsapp text-warning me-2"></i> <%= empresa.whatsapp %>
+                </p>
+                <p class="text-secondary">
+                    <i class="bi bi-clock-fill text-warning me-2"></i> Seg a Sex: 08:00 - 18:00
+                </p>
+            </div>
+        </div>
+
+        <hr class="my-4 border-secondary">
+
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start small text-secondary">
+                &copy; <%= new Date().getFullYear() %> <%= empresa.nome %> | Todos os direitos reservados.
+            </div>
+            <div class="col-md-6 text-center text-md-end small text-secondary">
+                Desenvolvido com <i class="bi bi-code-slash text-warning"></i> por você.
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
