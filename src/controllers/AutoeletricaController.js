@@ -10,14 +10,18 @@ const AutoeletricaController = {
         res.render('index', { servicos });
     },
 
-    /* Se amanhã você criar uma página só de um serviço:
-    renderDetalheServico: (req, res) => {
+    renderService: (req, res) => {
         const id = req.params.id;
-        const todos = AutoeletricaModel.getServices;
-        const servico = todos.find(s => s.id == id);
+        const allServices = AutoeletricaModel.getServices;
+        //const findService = allServices.find(s => s.id == id);
         
-        res.render('detalhe', { servico });
-    } */
+        res.render('pages/service', { allServices });
+    },
+
+    renderReview: (req, res) => {
+
+        res.render('pages/reviews');
+    },
 
     renderContact: (req, res) => {
 

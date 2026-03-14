@@ -17,7 +17,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// Rota para o home
+// Rotas do site
 app.use('/', AutoeletricaRoute);
 app.use('/contacto', AutoeletricaRoute);
 
