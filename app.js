@@ -19,6 +19,7 @@ app.use((req, res, next) => {
 
 // Rota para o home
 app.use('/', AutoeletricaRoute);
+app.use('/contacto', AutoeletricaRoute);
 
 
 
