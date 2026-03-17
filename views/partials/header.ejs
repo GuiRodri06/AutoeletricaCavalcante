@@ -1,27 +1,29 @@
-<header class="bg-dark text-white py-3 shadow-sm sticky-top">
-    <div class="container d-flex justify-content-between align-items-center">
-        <a href="/" class="text-white text-decoration-none d-flex align-items-center">
-            <img src="/img/imgAuto.png" alt="Logo" class="me-2" style="height: 110px; width: auto;">
-            <span class="h3 mb-0 fw-bold"><%= empresa.nome %></span>
+<header class="site-header sticky-top">
+    <div class="container header-container">
+        
+        <a href="/" class="brand-logo">
+            <img src="/img/imgAuto.png" alt="Logo <%= empresa.nome %>">
+            <span class="brand-name"><%= empresa.nome %></span>
         </a>
 
-        <nav class="d-none d-md-block">
-            <ul class="nav align-items-center">
-                <li class="nav-item"><a href="/" class="nav-link text-white">Início</a></li>
-                <li class="nav-item"><a href="/servicos" class="nav-link text-white">Serviços</a></li>
-                <li class="nav-item"><a href="/avaliacoes" class="nav-link text-white">Avaliações</a></li>
-                <li class="nav-item">
-                    <a href="https://wa.me/<%= empresa.whatsapp %>" target="_blank" class="btn btn-warning fw-bold ms-3 px-4">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="/servicos">Serviços</a></li>
+                <li><a href="/avaliacoes">Avaliações</a></li>
+                <li>
+                    <a href="https://wa.me/<%= empresa.whatsapp %>" target="_blank" class="btn-nav-contact">
                         <i class="bi bi-whatsapp"></i> CONTACTO
                     </a>
                 </li>
             </ul>
         </nav>
         
-        <div class="d-md-none">
-            <a href="https://wa.me/<%= empresa.whatsapp %>" class="btn btn-warning btn-sm">
+        <div class="mobile-nav">
+            <a href="https://wa.me/<%= empresa.whatsapp %>" class="btn-mobile-contact">
                 <i class="bi bi-whatsapp"></i>
             </a>
         </div>
+
     </div>
 </header>

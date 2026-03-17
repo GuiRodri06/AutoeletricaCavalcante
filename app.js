@@ -19,6 +19,8 @@ app.use((req, res, next) => {
 
 // Rotas do site
 app.use('/', AutoeletricaRoute);
+app.use('/servicos', AutoeletricaRoute);
+app.use('/avaliacoes', AutoeletricaRoute);
 app.use('/contacto', AutoeletricaRoute);
 
 
