@@ -2,7 +2,7 @@
 
 const AutoeletricaModel = {
     getCompanyData: () => ({
-        nome: "AutoElétrica Cavalcante",
+        nome: "Centro Automotivo 24 Horas",
         whatsapp: "5511999999999",
         endereco: "Rua das Baterias, 123",
         horario: "Segunda a Segunda: Atendimento 24 horas",

@@ -98,16 +98,73 @@ body {
 
 /* Botões do Header */
 .btn-nav-contact {
-    background-color: var(--primary) !important;
+    position: relative;
+    /* Um degradê mais suave, menos "alaranjado" */
+    background: linear-gradient(135deg, var(--primary) 0%, #f1c40f 100%);
     color: var(--dark) !important;
-    padding: 10px 25px;
+    
+    /* Diminuí um pouco o padding para não ficar gigante */
+    padding: 10px 22px; 
     border-radius: 50px;
+    
+    /* Peso 700 é negrito, mas não "gordo" como o 800 */
     font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    /* Transição suave para tudo */
+    transition: all 0.3s ease;
+    
+    /* Sombra bem sutil, só para dar profundidade */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: none;
+    overflow: hidden;
 }
 
+/* Ícone de WhatsApp */
+.btn-nav-contact i {
+    font-size: 1.1rem;
+}
+
+/* Efeito de Brilho (Shine) - Mantive, mas ele só acontece no HOVER */
+.btn-nav-contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: all 0.6s;
+}
+
+/* --- ESTADOS DE INTERAÇÃO --- */
+
 .btn-nav-contact:hover {
-    background-color: var(--primary-dark) !important;
+    /* Ele cresce de leve, sem exageros */
     transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(243, 156, 18, 0.3);
+    /* No hover ele ganha um pouco mais de vida */
+    filter: brightness(1.05);
+}
+
+/* O brilho atravessa o botão apenas quando o mouse passa */
+.btn-nav-contact:hover::before {
+    left: 100%;
+}
+
+/* O ícone dá um leve "pulo" para cima */
+.btn-nav-contact:hover i {
+    transform: translateY(-1px);
 }
 
 .mobile-nav {
@@ -134,17 +191,6 @@ body {
     background-attachment: fixed;
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
     color: var(--light);
-}
-
-.hero-badge {
-    background: var(--primary);
-    color: var(--dark);
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 0.8rem;
-    display: inline-block;
-    margin-bottom: 20px;
 }
 
 .hero-section h1 {
@@ -193,12 +239,12 @@ body {
     transition: 0.3s;
 }
 
-.btn-hero-main:hover { background: var(--primary-dark); transform: translateY(-3px); }
+.btn-hero-main:hover { background: var(--light); }
 .btn-hero-outline:hover { background: var(--light); color: var(--dark); }
 
 /* --- SEÇÃO CTA (SOCORRO EMERGENCIAL) --- */
 .cta-emergency {
-    margin-top: -60px; /* Faz a caixa subir sobre o hero */
+    margin-top: 60px; /* Faz a caixa subir sobre o hero */
     position: relative;
     z-index: 10;
     margin-bottom: 80px;
@@ -218,8 +264,20 @@ body {
     display: inline-block;
     background: var(--primary);
     color: var(--dark);
-    padding: 12px 40px;
+    padding: 10px 35px;
     border-radius: 50px;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.outher-cnt {
+    display: inline-block;
+    background: var(--text-muted);
+    color: var(--dark);
+    padding: 6px 10px;
+    border-radius: 15px;
     text-decoration: none;
     font-weight: bold;
     margin-top: 20px;
