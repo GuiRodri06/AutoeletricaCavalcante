@@ -39,7 +39,7 @@ body {
 }
 
 .brand-logo img {
-    height: 60px; /* Ajuste o tamanho da logo aqui */
+    height: 120px; /* ALTERAR ESSE TAMANHO NO PROPRIO ARQUIVO DE IMG, AJUSTAR UM FIXO PARA MENOS PESO DO SITE */
     width: auto;
     margin-right: 15px;
 }
@@ -56,18 +56,44 @@ body {
     align-items: center;
     margin: 0;
     padding: 0;
-    gap: 25px;
+    gap: 30px; /* Aumentei um pouquinho o respiro entre os links */
 }
 
+/* Estilo base dos links */
 .main-nav a {
     color: var(--light);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    position: relative; /* Essencial para a linha animada não quebrar o layout */
+    padding-bottom: 5px; /* Espaço para a linha respirar embaixo do texto */
 }
 
+/* Efeito de cor no texto */
 .main-nav a:hover {
     color: var(--primary);
+}
+
+.main-nav a:not(.btn-nav-contact)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Espessura da linha */
+    background-color: var(--primary);
+    
+    /* Prepara a animação: esconde a linha encolhendo-a */
+    transform: scaleX(0);
+    transform-origin: right; /* Quando o mouse sair, ela encolhe para a direita */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Quando o mouse passa por cima: a linha cresce */
+.main-nav a:not(.btn-nav-contact):hover::after {
+    transform: scaleX(1);
+    transform-origin: left; /* Ela nasce da esquerda para a direita */
 }
 
 /* Botões do Header */
