@@ -270,6 +270,7 @@ body {
     font-size: 19px;
     font-weight: bold;
     margin-top: 20px;
+    transition: 0.3s;
 }
 
 .outher-cnt {
@@ -281,7 +282,11 @@ body {
     text-decoration: none;
     font-weight: bold;
     margin-top: 20px;
+    transition: 0.3s;
 }
+
+.btn-cta:hover { background: var(--light); }
+.outher-cnt:hover { background: var(--light); color: var(--dark); }
 
 /* --- SEÇÃO DE SERVIÇOS --- */
 .services-section {
@@ -429,7 +434,7 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* --- INTERAÇÕES NO HOVER (MELHORADAS) --- */
+/* --- INTERAÇÕES NO HOVER --- */
 .service-card-v2:hover {
     transform: translateY(-10px);
     border-color: transparent;
