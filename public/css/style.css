@@ -461,6 +461,97 @@ body {
     color: #4285F4; 
 }
 
+/* SEÇÃO SHOWCASE  */
+.showcase-section {
+    padding: 100px 0;
+    background-color: var(--bg-body);
+}
+
+.showcase-container {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 120px; /* Espaço generoso entre as "páginas" */
+}
+
+.showcase-row {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+/* A MÁGICA: Inverte a ordem em linhas pares (2, 4, 6...) */
+.showcase-row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Imagem com efeito de moldura moderna */
+.showcase-image {
+    flex: 1;
+    position: relative;
+}
+
+.showcase-image img {
+    width: 100%;
+    border-radius: 30px;
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
+}
+
+.showcase-tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--primary);
+    color: var(--dark);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+/* Conteúdo do Texto */
+.showcase-content {
+    flex: 1;
+}
+
+.step-number {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--text-muted); /* Número gigante e sutil ao fundo */
+    line-height: 1;
+    display: block;
+    margin-bottom: -20px;
+}
+
+.showcase-content h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.showcase-content p {
+    font-size: 1.1rem;
+    color: var(--dark);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.showcase-features {
+    display: flex;
+    gap: 20px;
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 0.9rem;
+}
+
+.showcase-features i {
+    color: var(--primary);
+}
+
+
+
 /*  FOOTER  */
 .site-footer {
     background-color: var(--dark);
@@ -539,6 +630,16 @@ body {
 @media (max-width: 992px) {
     .main-nav { display: none; } /* Esconde o menu de links */
     .mobile-nav { display: block; } /* Mostra o botão do whats pequeno */
+
+    .showcase-row, .showcase-row:nth-child(even) {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .showcase-features {
+        justify-content: center;
+    }
     
     .footer-grid {
         grid-template-columns: 1fr; /* Footer empilha no celular */

@@ -113,6 +113,42 @@
                     </div>
                 </section>
 
+                <section class="showcase-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2>EXCELÊNCIA EM CADA DETALHE</h2>
+                            <div class="section-title-line"></div>
+                            <p>Conheça o padrão de qualidade que aplicamos em cada veículo</p>
+                        </div>
+
+                        <div class="showcase-container">
+                            <% showcase.forEach((item, index)=> { %>
+                                <div class="showcase-row">
+                                    <div class="showcase-image">
+                                        <img src="<%= item.imagem %>" alt="<%= item.titulo %>">
+                                        <span class="showcase-tag">
+                                            <%= item.tag %>
+                                        </span>
+                                    </div>
+                                    <div class="showcase-content">
+                                        <span class="step-number">0<%= index + 1 %></span> <br>
+                                        <h3>
+                                            <%= item.titulo %>
+                                        </h3>
+                                        <p>
+                                            <%= item.descricao %>
+                                        </p>
+                                        <div class="showcase-features">
+                                            <span><i class="bi bi-check2-circle"></i> Peças Originais</span>
+                                            <span><i class="bi bi-shield-check"></i> Garantia de Serviço</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% }); %>
+                        </div>
+                    </div>
+                </section>
+
             </main>
 
             <%- include('../partials/footer') %>

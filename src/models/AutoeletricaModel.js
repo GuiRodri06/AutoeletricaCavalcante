@@ -41,6 +41,30 @@ const AutoeletricaModel = {
             texto: "Transparência total no orçamento. Não inventaram defeitos e cobraram o valor combinado. Recomendo a todos!",
             linkAvaliacao: "https://g.co/kgs/exemplo3"
         }
+    ],
+
+    getShowcase: () => [
+        {
+            id: 1,
+            titulo: "Diagnóstico Computadorizado",
+            descricao: "Utilizamos scanners de última geração para identificar falhas ocultas no sistema eletrônico, garantindo precisão e evitando trocas desnecessárias de peças.",
+            imagem: "/img/oficinaMecanica.jpg",
+            tag: "Tecnologia"
+        },
+        {
+            id: 2,
+            titulo: "Recuperação de Alternadores",
+            descricao: "Um serviço artesanal que devolve a vida ao sistema de carga do seu veículo. Testamos cada componente sob estresse para garantir durabilidade máxima.",
+            imagem: "/img/oficinaMecanica.jpg",
+            tag: "Precisão"
+        },
+        {
+            id: 3,
+            titulo: "Instalações de Alta Performance",
+            descricao: "Seja para som, iluminação LED ou acessórios complexos, nossa fiação é feita com isolamento térmico e conectores padrão original.",
+            imagem: "/img/oficinaMecanica.jpg",
+            tag: "Qualidade"
+        }
     ]
 };
 
