@@ -3,71 +3,119 @@
 
 <%- include('../partials/head') %>
 
-<body>
-    <%- include('../partials/header') %>
+    <body>
+        <%- include('../partials/header') %>
 
-    <main>
-        <section class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>SEU CARRO PAROU? <br> <span>A GENTE RESOLVE.</span></h1>
-                    <p>
-                        Especialistas em injeção eletrônica, baterias e motor de arranque. 
-                        Tecnologia de ponta para garantir que você nunca fique na mão.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#servicos" class="btn-hero-outline">
-                            <i class="bi bi-gear-fill"></i> NOSSOS SERVIÇOS
-                        </a>
-                        <a href="https://wa.me/<%= empresa.whatsapp %>" class="btn-hero-main">
-                            <i class="bi bi-whatsapp"></i> ORÇAMENTO AGORA
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-emergency">
-            <div class="container">
-                <div class="cta-box">
-                    <h2>Precisa de Socorro Elétrico?</h2>
-                    <p>Atendimento rápido em toda a região. Não perca tempo!</p>
-                    <a href="tel:+<%= empresa.whatsapp %>" class="btn-cta">PREMIR AQUI PARA TELEFONAR</a> <br>
-                    <a href="USAR A PAGINAS DE CONTATOS AQUI" class="outher-cnt">Outros meios de contactos</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="servicos" class="services-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>O QUE FAZEMOS?</h2>
-                    <div class="section-title-line"></div>
-                    <p>Serviços rápidos com garantia de quem entende do assunto</p>
-                </div>
-
-                <div class="services-grid">
-                    <% servicos.forEach(servico => { %>
-                        <div class="service-item">
-                            <div class="card-servico">
-                                <div class="service-icon">
-                                    <%= servico.icone %>
-                                </div>
-                                <h4><%= servico.titulo %></h4>
-                                <p><%= servico.descricao %></p>
-                                
-                                <a href="https://wa.me/<%= empresa.whatsapp %>?text=Olá! Orçamento para: <%= servico.titulo %>" 
-                                   class="btn-service-request" target="_blank">
-                                    <i class="bi bi-chat-right-text"></i> SOLICITAR
+            <main>
+                <section class="hero-section">
+                    <div class="container">
+                        <div class="hero-content">
+                            <h1>SEU CARRO PAROU? <br> <span>A GENTE RESOLVE.</span></h1>
+                            <p>
+                                Especialistas em injeção eletrônica, baterias e motor de arranque.
+                                Tecnologia de ponta para garantir que você nunca fique na mão.
+                            </p>
+                            <div class="hero-actions">
+                                <a href="#servicos" class="btn-hero-outline">
+                                    <i class="bi bi-gear-fill"></i> NOSSOS SERVIÇOS
+                                </a>
+                                <a href="https://wa.me/<%= empresa.whatsapp %>" class="btn-hero-main">
+                                    <i class="bi bi-whatsapp"></i> ORÇAMENTO AGORA
                                 </a>
                             </div>
                         </div>
-                    <% }); %>
-                </div>
-            </div>
-        </section>
-    </main>
+                    </div>
+                </section>
 
-    <%- include('../partials/footer') %>
-</body>
+                <section class="cta-emergency">
+                    <div class="container">
+                        <div class="cta-box">
+                            <h2>Precisa de Socorro Elétrico?</h2>
+                            <p>Atendimento rápido em toda a região. Não perca tempo!</p>
+                            <a href="tel:+<%= empresa.whatsapp %>" class="btn-cta">PREMIR AQUI PARA TELEFONAR</a> <br>
+                            <a href="USAR A PAGINAS DE CONTATOS AQUI" class="outher-cnt">Outros meios de contactos</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="servicos" class="services-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2>O QUE FAZEMOS?</h2>
+                            <div class="section-title-line"></div>
+                            <p>Serviços rápidos com garantia de quem entende do assunto</p>
+                        </div>
+
+                        <div class="services-grid">
+                            <% servicos.forEach(servico=> { %>
+                                <div class="service-item">
+                                    <div class="card-servico">
+                                        <div class="service-icon">
+                                            <%= servico.icone %>
+                                        </div>
+                                        <h4>
+                                            <%= servico.titulo %>
+                                        </h4>
+                                        <p>
+                                            <%= servico.descricao %>
+                                        </p>
+
+                                        <a href="https://wa.me/<%= empresa.whatsapp %>?text=Olá! Orçamento para: <%= servico.titulo %>"
+                                            class="btn-service-request" target="_blank">
+                                            <i class="bi bi-chat-right-text"></i> SOLICITAR
+                                        </a>
+                                    </div>
+                                </div>
+                                <% }); %>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="avaliacoes" class="reviews-section">
+                    <div class="container">
+                        <div class="section-header text-light">
+                            <h2>O QUE DIZEM OS NOSSOS CLIENTES</h2>
+                            <div class="section-title-line"></div>
+                            <p>A confiança de quem já passou pela nossa oficina</p>
+                        </div>
+
+                        <div class="reviews-grid">
+                            <% avaliacoes.forEach(avaliacao=> { %>
+                                <a href="<%= avaliacao.linkAvaliacao %>" target="_blank" class="review-card">
+                                    <i class="bi bi-google google-icon"></i>
+
+                                    <div class="review-stars">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+
+                                    <p class="review-text">"<%= avaliacao.texto %>"</p>
+
+                                    <div class="review-author">
+                                        <div class="author-avatar">
+                                            <%= avaliacao.inicial %>
+                                        </div>
+                                        <div class="author-info">
+                                            <h5>
+                                                <%= avaliacao.autor %>
+                                            </h5>
+                                            <span>
+                                                <%= avaliacao.tempo %>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <% }); %>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <%- include('../partials/footer') %>
+    </body>
+
 </html>

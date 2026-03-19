@@ -359,6 +359,108 @@ body {
     background: rgba(255,255,255,0.2);
 }
 
+/* SEÇÃO DE AVALIAÇÕES */
+.reviews-section {
+    background-color: var(--dark);
+    padding: 80px 0;
+}
+
+/* Força os textos do cabeçalho da seção a ficarem claros */
+.reviews-section .section-header h2,
+.reviews-section .section-header p {
+    color: var(--light);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Estilo do Cartão de Avaliação */
+.review-card {
+    position: relative;
+    background: var(--dark-grey);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-top: 4px solid var(--primary);
+}
+
+/* O ícone do Google no canto superior direito */
+.google-icon {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.2);
+    transition: color 0.3s ease;
+}
+
+.review-stars {
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    color: var(--light);
+    font-size: 1rem;
+    line-height: 1.7;
+    font-style: italic;
+    flex-grow: 1; /* Empurra o autor para o fundo do cartão */
+    margin-bottom: 30px;
+}
+
+/* Informações do Autor da Avaliação */
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-avatar {
+    width: 45px;
+    height: 45px;
+    background: var(--primary);
+    color: var(--dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.author-info h5 {
+    color: var(--light);
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.author-info span {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* --- ESTADOS DE HOVER (Quando passa o rato) --- */
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(243, 156, 18, 0.15);
+}
+
+.review-card:hover .google-icon {
+    /* O ícone do Google acende quando passa o rato */
+    color: #4285F4; 
+}
+
 /*  FOOTER  */
 .site-footer {
     background-color: var(--dark);
