@@ -39,27 +39,27 @@ const AutoeletricaModel = {
     getReviews: () => [
         {
             id: 1,
-            autor: "João Silva",
-            inicial: "J", // Letra para o avatar
-            tempo: "Há 2 semanas",
-            texto: "Excelente profissional! Fiquei parado na estrada com problema no alternador e eles chegaram super rápido. Preço justo e serviço impecável.",
-            linkAvaliacao: "https://g.co/kgs/exemplo1" // Link real do Google Maps
+            autor: "M. Cassimiro",
+            inicial: "M", // Letra para o avatar
+            tempo: "Há 1 semana",
+            texto: "O senhor José já nos salvou várias vezes! Encontramos ele aqui no Google e não largamos mais. Levamos o carro na Modas e eles fizeram diagnóstico, ficamos sem carro por quase 2 semanas, trocaram sensores e nada resolvido. Levamos no senhor José, ele resolveu esse problema e outros aparecerem nos últimos meses. Ele sempre encontra disponibilidade, faz o serviço muito bem feito, e super honesto e nos mantém informados se encontra nas peças/manutenção. Super recomendo!",
+            linkAvaliacao: "https://share.google/0sV2H0LntZKtEUqJJ" 
         },
         {
             id: 2,
-            autor: "Maria Fernandes",
-            inicial: "M",
-            tempo: "Há 1 mês",
-            texto: "A única autoelétrica que conseguiu resolver o problema crônico de bateria do meu carro. Atendimento nota 10 e oficina muito organizada.",
-            linkAvaliacao: "https://g.co/kgs/exemplo2"
+            autor: "Franquelim Jesus Fontes Fontes",
+            inicial: "F",
+            tempo: "Há 7 meses",
+            texto: "Foi um grande homem não se negou a fazer um grande favor em ir ter comigo as 4 horas da manhã para fazer um serviço que todos negaram não sei porquê agradeço do fundo do meu coração a este homem que não é português é brasileiro mas para mim é muito melhor que muitos portugueses obrigados meu amigo",
+            linkAvaliacao: "https://share.google/zIot0929TQNdWrNoDgs/exemplo2"
         },
         {
             id: 3,
-            autor: "Carlos Almeida",
-            inicial: "C",
-            tempo: "Há 3 meses",
-            texto: "Transparência total no orçamento. Não inventaram defeitos e cobraram o valor combinado. Recomendo a todos!",
-            linkAvaliacao: "https://g.co/kgs/exemplo3"
+            autor: "Daniel Lima",
+            inicial: "D",
+            tempo: "Há 1 ano",
+            texto: "José é um mecânico excepcional, sempre pronto para ajudar onde for necessário. Diferente de muitos, ele não tem uma oficina fixa, mas vai até o local onde o carro precisa de assistência, trazendo praticidade e eficiência. Já cuidou de dois carros meus com total profissionalismo: em um, trocou lâmpadas e ajustou o sistema de fios para restaurar a iluminação; no outro, fez a substituição da central de fusíveis de um Megane, garantindo que tudo voltasse a funcionar perfeitamente. Além da competência e dedicação, José cobra um preço justo e é super simpático. Um verdadeiro achado para quem precisa de um mecânico de confiança!",
+            linkAvaliacao: "https://share.google/lBkxNqUKaCBK64RfY"
         }
     ],
 
