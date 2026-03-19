@@ -38,31 +38,37 @@
                     </div>
                 </section>
 
-                <section id="servicos" class="services-section">
+                <section id="servicos" class="premium-basic-section">
                     <div class="container">
                         <div class="section-header">
-                            <h2>O QUE FAZEMOS?</h2>
+                            <h2>SERVIÇOS ESPECIALIZADOS</h2>
                             <div class="section-title-line"></div>
-                            <p>Serviços rápidos com garantia de quem entende do assunto</p>
+                            <p>Tecnologia de ponta e diagnóstico preciso para o seu veículo.</p>
                         </div>
 
-                        <div class="services-grid">
+                        <div class="services-wrapper">
                             <% servicos.forEach(servico=> { %>
-                                <div class="service-item">
-                                    <div class="card-servico">
-                                        <div class="service-icon">
-                                            <%= servico.icone %>
-                                        </div>
+                                <div class="service-card-v2">
+                                    <div class="card-line-top"></div>
+
+                                    <div class="card-icon-wrapper">
+                                        <i class="bi <%= servico.icone %> icon-main"></i>
+                                        <div class="icon-circle-bg"></div>
+                                    </div>
+
+                                    <div class="card-body-v2">
                                         <h4>
                                             <%= servico.titulo %>
                                         </h4>
                                         <p>
                                             <%= servico.descricao %>
                                         </p>
+                                    </div>
 
-                                        <a href="https://wa.me/<%= empresa.whatsapp %>?text=Olá! Orçamento para: <%= servico.titulo %>"
-                                            class="btn-service-request" target="_blank">
-                                            <i class="bi bi-chat-right-text"></i> SOLICITAR
+                                    <div class="card-footer-v2">
+                                        <a href="https://wa.me/<%= empresa.whatsapp %>" class="btn-action-simple">
+                                            <span>Agendar agora</span>
+                                            <i class="bi bi-arrow-right"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -109,6 +115,11 @@
                                     </div>
                                 </a>
                                 <% }); %>
+                        </div>
+
+                        <div class="hero-actions" style="padding-top: 40px;">
+                            <!-- O mesmo estilo de botao da 1 secao -->
+                            <a href="/avaliacoes" class="btn-hero-main">VER OUTRAS AVALIAÇÕES</a>
                         </div>
                     </div>
                 </section>

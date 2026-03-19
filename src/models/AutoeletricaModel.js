@@ -6,14 +6,34 @@ const AutoeletricaModel = {
         whatsapp: "5511999999999",
         endereco: "Rua das Baterias, 123",
         horario: "Segunda a Segunda: Atendimento 24 horas",
-        coordenadas: "-23.5505,-46.6333" 
+        coordenadas: "-23.5505,-46.6333"
     }),
 
     getServices: () => [
-        { id: 1, titulo: "Recarga de Bateria", icone: "🔋", precoBase: 50 },
-        { id: 2, titulo: "Alternador", icone: "⚙️", precoBase: 120 },
-        { id: 3, titulo: "Injeção Eletrônica", icone: "💻", precoBase: 150 },
-        { id: 4, titulo: "Revisão Geral", icone: "🚗", precoBase: 100 }
+        {
+            id: 1,
+            titulo: "Injeção Eletrônica",
+            icone: "bi-cpu-fill", // Ícone de processador/tecnologia
+            descricao: "Diagnóstico computadorizado de precisão para falhas e performance."
+        },
+        {
+            id: 2,
+            titulo: "Baterias e Carga",
+            icone: "bi-battery-charging", // Ícone de bateria carregando
+            descricao: "Substituição e testes de alternador com equipamentos de ponta."
+        },
+        {
+            id: 3,
+            titulo: "Ar-Condicionado",
+            icone: "bi-snow2", // Ícone de floco de neve estilizado
+            descricao: "Higienização, recarga de gás e manutenção completa do sistema."
+        },
+        {
+            id: 4,
+            titulo: "Motores e Elétrica",
+            icone: "bi-lightning-charge-fill", // Ícone de energia/raio
+            descricao: "Reparo em motores de partida, alternadores e chicotes elétricos."
+        }
     ],
 
     getReviews: () => [

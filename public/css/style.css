@@ -311,58 +311,162 @@ body {
     gap: 30px;
 }
 
-/* --- CARDS DE SERVIÇO --- */
-.card-servico {
-    background: var(--light);
-    padding: 40px 30px;
-    border-radius: 20px;
+/* --- PREMIUM BASIC SECTION --- */
+.premium-basic-section {
+    padding: 100px 0;
+    background-color: #fcfdfe;
+}
+
+.section-intro {
     text-align: center;
-    height: 100%;
-    transition: 0.4s;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    max-width: 700px;
+    margin: 0 auto 60px;
 }
 
-.service-icon {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-}
-
-.card-servico h4 {
+.tag-line {
+    color: var(--primary);
     font-weight: 700;
-    margin-bottom: 15px;
-}
-
-.card-servico p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-.btn-service-request {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
     display: block;
-    background: var(--dark);
-    color: var(--light);
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 50px;
-    margin-top: 20px;
-    font-size: 0.85rem;
-    transition: 0.3s;
+    margin-bottom: 10px;
 }
 
-.card-servico:hover {
-    transform: translateY(-10px);
+.section-intro h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #1a1a1a;
+}
+
+/* --- GRID E CARDS MELHORADOS --- */
+.services-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card-v2 {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px 30px;
+    position: relative;
+    border: 1px solid #f0f0f0;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Linha de destaque no topo */
+.card-line-top {
+    position: absolute;
+    top: 0; left: 50%;
+    width: 0; height: 4px;
     background: var(--primary);
+    transition: all 0.4s ease;
+    border-radius: 0 0 4px 4px;
+    transform: translateX(-50%);
 }
 
-.card-servico:hover p, .card-servico:hover .btn-service-request {
+/* --- NOVO ESTILO DO ÍCONE INTEGRADO --- */
+.card-icon-wrapper {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-main {
+    font-size: 2.2rem;
     color: var(--dark);
-    background: rgba(255,255,255,0.2);
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.icon-circle-bg {
+    position: absolute;
+    width: 100%; height: 100%;
+    background: rgba(243, 156, 18, 0.12);
+    border-radius: 18px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Corpo do Card */
+.card-body-v2 h4 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.card-body-v2 p {
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+/* Botão de Ação */
+.btn-action-simple {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn-action-simple i {
+    color: var(--primary);
+    transition: transform 0.3s ease;
+}
+
+/* --- INTERAÇÕES NO HOVER (MELHORADAS) --- */
+.service-card-v2:hover {
+    transform: translateY(-10px);
+    border-color: transparent;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+.service-card-v2:hover .card-line-top {
+    width: 40%;
+}
+
+/* Animação do Ícone e Fundo */
+.service-card-v2:hover .icon-main {
+    color: #ffffff;
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.service-card-v2:hover .icon-circle-bg {
+    background: var(--primary);
+    transform: rotate(45deg);
+    box-shadow: 0 10px 20px rgba(243, 156, 18, 0.3);
+}
+
+/* Animação do Botão */
+.service-card-v2:hover .btn-action-simple {
+    background: var(--primary);
+    color: var(--dark);
+}
+
+.service-card-v2:hover .btn-action-simple i {
+    transform: translateX(5px);
+    color: var(--dark);
 }
 
 /* SEÇÃO DE AVALIAÇÕES */
 .reviews-section {
     background-color: var(--dark);
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 /* Força os textos do cabeçalho da seção a ficarem claros */
