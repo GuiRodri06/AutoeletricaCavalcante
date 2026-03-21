@@ -4,16 +4,59 @@
 <%- include('../partials/head') %>
 
 <body>
-
     <%- include('../partials/header') %>
 
-    <h1> TODOS OS SERVIÇOS QUE PRESTAMOS </h1>
+    <main>
 
-    <h4><%= empresa.nome %></h4>
-    <p><%= empresa.endereco %></p>
-    <p><%= empresa.whatsapp %></p>
+        <!-- ===== HERO ===== -->
+        <section class="services-hero">
+            <div class="container">
+                <div class="services-hero-content">
+                    <div class="hero-badge">
+                        <i class="bi bi-gear-fill"></i> O QUE FAZEMOS
+                    </div>
+                    <h1>Serviços que <em>resolvem de verdade.</em></h1>
+                    <p>
+                        Tecnologia de diagnóstico de ponta e mão de obra especializada
+                        para garantir que o seu veículo nunca te deixa na mão.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== GRID DE SERVIÇOS ===== -->
+        <section class="services-full-section">
+            <div class="container">
+
+                <div class="services-full-grid">
+                    <% allServices.forEach((servico, index) => { %>
+                        <div class="service-full-card">
+
+                            <div class="sfc-index">0<%= index + 1 %></div>
+
+                            <div class="sfc-icon-wrapper">
+                                <i class="bi <%= servico.icone %>"></i>
+                            </div>
+
+                            <div class="sfc-body">
+                                <h3><%= servico.titulo %></h3>
+                                <p><%= servico.descricao %></p>
+                            </div>
+
+                            <a href="https://wa.me/<%= empresa.whatsapp %>?text=<%= encodeURIComponent('Olá! Gostaria de saber mais sobre o serviço: ' + servico.titulo) %>" target="_blank" class="sfc-cta">
+                                <span>Pedir orçamento</span>
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+
+                        </div>
+                    <% }); %>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
 
     <%- include('../partials/footer') %>
-
 </body>
 </html>

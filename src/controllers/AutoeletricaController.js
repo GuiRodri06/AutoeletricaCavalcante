@@ -14,7 +14,7 @@ const AutoeletricaController = {
 
     renderService: (req, res) => {
         const id = req.params.id;
-        const allServices = AutoeletricaModel.getServices;
+        const allServices = AutoeletricaModel.getServices();
         //const findService = allServices.find(s => s.id == id);
         
         res.render('pages/service', { allServices });

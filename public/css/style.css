@@ -769,6 +769,41 @@ body {
     .cta-box { padding: 30px; }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ============================================================
    PÁGINA DE CONTACTO — adicionar ao ficheiro CSS principal
    ============================================================ */
@@ -1356,4 +1391,247 @@ body {
     .hero-stats    { gap: 24px; }
     .form-row      { grid-template-columns: 1fr; }
     .contact-form  { padding: 28px 22px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   PÁGINA DE SERVIÇOS — adicionar ao ficheiro CSS principal
+   ============================================================ */
+
+/* --- HERO SERVIÇOS --- */
+.services-hero {
+    background: linear-gradient(135deg, rgba(15,15,15,0.97) 0%, rgba(30,30,30,0.9) 100%),
+                url('../img/Torne-sua-oficina-moderna-em-10-passos.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 100px 0 80px;
+    color: var(--light);
+    position: relative;
+    overflow: hidden;
+}
+
+.services-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 40%; height: 100%;
+    background: repeating-linear-gradient(
+        -55deg,
+        transparent, transparent 12px,
+        rgba(243,156,18,0.04) 12px,
+        rgba(243,156,18,0.04) 13px
+    );
+    pointer-events: none;
+}
+
+.services-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+}
+
+.services-hero h1 {
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.services-hero h1 em {
+    font-style: normal;
+    color: var(--primary);
+}
+
+.services-hero p {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    max-width: 520px;
+}
+
+/* --- GRID DE SERVIÇOS --- */
+.services-full-section {
+    padding: 90px 0 100px;
+    background: var(--bg-body);
+}
+
+.services-full-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+}
+
+/* Card de Serviço */
+.service-full-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px 32px 32px;
+    border: 1.5px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Número de índice decorativo */
+.sfc-index {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: rgba(0,0,0,0.04);
+    line-height: 1;
+    pointer-events: none;
+    transition: color 0.4s ease;
+}
+
+/* Linha de destaque que cresce no hover (igual ao index) */
+.service-full-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    width: 0; height: 4px;
+    background: var(--primary);
+    border-radius: 0 0 4px 4px;
+    transform: translateX(-50%);
+    transition: width 0.4s ease;
+}
+
+.service-full-card:hover::before { width: 50%; }
+
+/* Ícone */
+.sfc-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: rgba(243,156,18,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--primary);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    flex-shrink: 0;
+}
+
+/* Corpo */
+.sfc-body { flex: 1; }
+
+.sfc-body h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.sfc-body p {
+    font-size: 0.97rem;
+    color: #6c757d;
+    line-height: 1.65;
+}
+
+/* Botão CTA */
+.sfc-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background: #f8f9fa;
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.sfc-cta i {
+    font-size: 1.1rem;
+    color: #25D366;
+    transition: transform 0.3s ease;
+}
+
+/* --- HOVER DO CARD --- */
+.service-full-card:hover {
+    transform: translateY(-10px);
+    border-color: transparent;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+}
+
+.service-full-card:hover .sfc-index {
+    color: rgba(243,156,18,0.08);
+}
+
+.service-full-card:hover .sfc-icon-wrapper {
+    background: var(--primary);
+    color: var(--dark);
+    transform: scale(1.08) rotate(-5deg);
+    box-shadow: 0 10px 24px rgba(243,156,18,0.3);
+}
+
+.service-full-card:hover .sfc-cta {
+    background: var(--primary);
+    color: var(--dark);
+}
+
+.service-full-card:hover .sfc-cta i {
+    color: var(--dark);
+    transform: translateX(4px);
+}
+
+/* --- ANIMAÇÃO DE ENTRADA --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.services-hero-content { animation: fadeInUp 0.7s ease both; }
+
+.service-full-card {
+    animation: fadeInUp 0.6s ease both;
+}
+
+/* Escalonamento por posição */
+.service-full-card:nth-child(1) { animation-delay: 0.05s; }
+.service-full-card:nth-child(2) { animation-delay: 0.12s; }
+.service-full-card:nth-child(3) { animation-delay: 0.19s; }
+.service-full-card:nth-child(4) { animation-delay: 0.26s; }
+.service-full-card:nth-child(5) { animation-delay: 0.33s; }
+.service-full-card:nth-child(6) { animation-delay: 0.40s; }
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .services-hero { padding: 70px 0 60px; }
+    .services-full-grid { grid-template-columns: 1fr; }
 }
