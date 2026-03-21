@@ -3,17 +3,253 @@
 
 <%- include('../partials/head') %>
 
-<body>
+    <body>
+        <%- include('../partials/header') %>
 
-    <%- include('../partials/header') %>
+            <main>
 
-    <h1> AREA DE CONTATO </h1>
+                <!-- ===== HERO ===== -->
+                <section class="contact-hero">
+                    <div class="container">
+                        <div class="contact-hero-content">
+                            <div class="hero-badge">
+                                <i class="bi bi-headset"></i> SUPORTE 24 HORAS
+                            </div>
+                            <h1>Fale connosco.<br><em>Sem complicações.</em></h1>
+                            <p>
+                                Estamos sempre disponíveis — por WhatsApp, telefone ou pessoalmente.
+                                Escolha o canal que preferir e respondemos de imediato.
+                            </p>
+                            <div class="hero-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">24h</span>
+                                    <span class="stat-label">Disponibilidade</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">&lt;30min</span>
+                                    <span class="stat-label">Tempo de resposta</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">+500</span>
+                                    <span class="stat-label">Clientes satisfeitos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-    <h4><%= empresa.nome %></h4>
-    <p><%= empresa.endereco %></p>
-    <p><%= empresa.whatsapp %></p>
+                <!-- ===== CANAIS DE CONTACTO + HORÁRIOS ===== -->
+                <section class="contact-main">
+                    <div class="container">
+                        <div class="contact-grid">
 
-    <%- include('../partials/footer') %>
+                            <!-- Coluna Esquerda: Canais -->
+                            <div class="contact-channels">
+                                <div class="section-label"><i class="bi bi-telephone-fill"></i> Canais disponíveis</div>
+                                <h2 class="channels-title">Como prefere<br>entrar em contacto?</h2>
+                                <p class="channels-subtitle">
+                                    Escolha o meio mais cómodo. Estamos presentes em todas as plataformas
+                                    para garantir que nunca fique sem resposta.
+                                </p>
 
-</body>
+                                <!-- WhatsApp -->
+                                <a href="https://wa.me/<%= empresa.whatsapp %>" target="_blank" class="channel-card">
+                                    <div class="channel-icon ch-whatsapp">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </div>
+                                    <div class="channel-info">
+                                        <div class="channel-label">WhatsApp</div>
+                                        <div class="channel-value">+<%= empresa.whatsapp %>
+                                        </div>
+                                        <div class="channel-sub">Resposta em minutos</div>
+                                    </div>
+                                    <span class="channel-badge">Mais rápido</span>
+                                    <i class="bi bi-arrow-right channel-arrow"></i>
+                                </a>
+
+                                <!-- Telefone -->
+                                <a href="tel:+<%= empresa.whatsapp %>" class="channel-card">
+                                    <div class="channel-icon ch-phone">
+                                        <i class="bi bi-telephone-fill"></i>
+                                    </div>
+                                    <div class="channel-info">
+                                        <div class="channel-label">Telefone</div>
+                                        <div class="channel-value">+<%= empresa.whatsapp %>
+                                        </div>
+                                        <div class="channel-sub">Disponível 24 horas por dia</div>
+                                    </div>
+                                    <i class="bi bi-arrow-right channel-arrow"></i>
+                                </a>
+
+                                <!-- Localização -->
+                                <a href="https://www.google.com/maps?q=<%= empresa.coordenadas %>" target="_blank"
+                                    class="channel-card">
+                                    <div class="channel-icon ch-maps">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                    </div>
+                                    <div class="channel-info">
+                                        <div class="channel-label">Localização</div>
+                                        <div class="channel-value">
+                                            <%= empresa.endereco %>
+                                        </div>
+                                        <div class="channel-sub">Ver no Google Maps</div>
+                                    </div>
+                                    <i class="bi bi-arrow-right channel-arrow"></i>
+                                </a>
+                            </div>
+
+                            <!-- Coluna Direita: Horários + Mapa -->
+                            <div class="contact-right">
+
+                                <!-- Card de Horários -->
+                                <div class="hours-card">
+                                    <div class="hours-card-title">
+                                        <i class="bi bi-clock-fill"></i>
+                                        Horário de Funcionamento
+                                        <span class="live-badge">
+                                            <span class="live-dot"></span>
+                                            ABERTO
+                                        </span>
+                                    </div>
+                                    <p class="hours-text">
+                                        <%= empresa.horario %>
+                                    </p>
+                                </div>
+
+                                <!-- Card Mapa -->
+                                <div class="map-card">
+                                    <div class="map-placeholder">
+                                        <div class="map-pin-icon">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                        </div>
+                                        <p>
+                                            <%= empresa.endereco %>
+                                        </p>
+                                    </div>
+                                    <div class="map-info">
+                                        <div class="map-address">
+                                            <%= empresa.endereco %>
+                                        </div>
+                                        <a href="https://www.google.com/maps?q=<%= empresa.coordenadas %>"
+                                            target="_blank" class="btn-directions">
+                                            <i class="bi bi-signpost-split-fill"></i>
+                                            Indicações
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== FORMULÁRIO → WHATSAPP ===== -->
+                <section class="form-section">
+                    <div class="container">
+                        <div class="form-wrapper">
+
+                            <div class="form-intro">
+                                <div class="section-label"><i class="bi bi-whatsapp"></i> Orçamento</div>
+                                <h2>Prefere que<br>nós <em>entremos<br>em contacto?</em></h2>
+                                <p>
+                                    Preencha o formulário e será redirecionado para o nosso WhatsApp
+                                    com a mensagem já pronta. Simples e rápido.
+                                </p>
+                                <div class="form-assurances">
+                                    <div class="assurance-item">
+                                        <i class="bi bi-whatsapp"></i>
+                                        <span>Redirecionamento direto para o WhatsApp</span>
+                                    </div>
+                                    <div class="assurance-item">
+                                        <i class="bi bi-clock"></i>
+                                        <span>Resposta em menos de 30 minutos</span>
+                                    </div>
+                                    <div class="assurance-item">
+                                        <i class="bi bi-chat-dots"></i>
+                                        <span>Orçamento sem compromisso</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <form class="contact-form" id="whatsapp-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="nome">Nome</label>
+                                        <input type="text" id="nome" name="nome" placeholder="O seu nome" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="telefone">Telefone</label>
+                                        <input type="tel" id="telefone" name="telefone" placeholder="+55 11 9XXXX-XXXX">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="servico">Serviço pretendido</label>
+                                    <select id="servico" name="servico" required>
+                                        <option value="" disabled selected>Selecione um serviço</option>
+                                        <option>Injeção Eletrónica</option>
+                                        <option>Bateria / Arranque</option>
+                                        <option>Diagnóstico Geral</option>
+                                        <option>Instalação Elétrica</option>
+                                        <option>Socorro / Emergência</option>
+                                        <option>Outro</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="mensagem">Mensagem</label>
+                                    <textarea id="mensagem" name="mensagem"
+                                        placeholder="Descreva o problema ou a dúvida..."></textarea>
+                                </div>
+
+                                <button type="submit" class="btn-submit">
+                                    <i class="bi bi-whatsapp"></i>
+                                    Enviar pelo WhatsApp
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== SOCORRO ELETRICO ===== -->
+                <section class="cta-emergency">
+                    <div class="container">
+                        <div class="cta-box">
+                            <h2>Precisa de Socorro Elétrico?</h2>
+                            <p>Atendimento rápido em toda a região. Não perca tempo!</p>
+                            <a href="tel:+<%= empresa.whatsapp %>" class="btn-cta">PREMIR AQUI PARA TELEFONAR</a> <br>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <script>
+                document.getElementById('whatsapp-form').addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const nome = document.getElementById('nome').value.trim();
+                    const telefone = document.getElementById('telefone').value.trim();
+                    const servico = document.getElementById('servico').value;
+                    const mensagem = document.getElementById('mensagem').value.trim();
+
+                    const texto = [
+                        `Olá! Vim através do site *<%= empresa.nome %>* e gostaria de um orçamento.`,
+                        ``,
+                        `*Nome:* ${nome}`,
+                        telefone ? `*Telefone:* ${telefone}` : null,
+                        `*Serviço:* ${servico}`,
+                        mensagem ? `*Mensagem:* ${mensagem}` : null,
+                    ]
+                        .filter(Boolean)
+                        .join('\n');
+
+                    const url = `https://wa.me/<%= empresa.whatsapp %>?text=${encodeURIComponent(texto)}`;
+                    window.open(url, '_blank');
+                });
+            </script>
+
+            <%- include('../partials/footer') %>
+    </body>
+
 </html>
