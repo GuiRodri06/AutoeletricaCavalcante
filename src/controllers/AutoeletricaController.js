@@ -6,7 +6,7 @@ const AutoeletricaController = {
     renderHome: (req, res) => {
         // O dado da empresa já foi injetado pelo Middleware
         const servicos = AutoeletricaModel.getServices();
-        const avaliacoes = AutoeletricaModel.getReviews();
+        const avaliacoes = AutoeletricaModel.getReviews().slice(0, 3);;
         const showcase = AutoeletricaModel.getShowcase();
         
         res.render('pages/index', { servicos, avaliacoes, showcase });
