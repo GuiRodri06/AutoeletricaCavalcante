@@ -71,11 +71,11 @@ const AutoeletricaModel = {
         },
         {
             id: 5,
-            autor: "Daniel Lima",
-            inicial: "D",
+            autor: "Luís Alex Silva",
+            inicial: "L",
             tempo: "Há 1 ano",
-            texto: "José é um mecânico excepcional, sempre pronto para ajudar onde for necessário. Diferente de muitos, ele não tem uma oficina fixa, mas vai até o local onde o carro precisa de assistência, trazendo praticidade e eficiência. Já cuidou de dois carros meus com total profissionalismo: em um, trocou lâmpadas e ajustou o sistema de fios para restaurar a iluminação; no outro, fez a substituição da central de fusíveis de um Megane, garantindo que tudo voltasse a funcionar perfeitamente. Além da competência e dedicação, José cobra um preço justo e é super simpático. Um verdadeiro achado para quem precisa de um mecânico de confiança!",
-            linkAvaliacao: "https://share.google/lBkxNqUKaCBK64RfY"
+            texto: "Excelente escolha! O serviço correu muito bem, o senhor José foi super prestável, amável e atencioso aos detalhes, deixando um trabalho com dignos de uma oficina premium! Recomendo vivamente !",
+            linkAvaliacao: "https://share.google/OU1ZhSnrEN8A9ZzUI"
         },
         {
             id: 6,
@@ -87,11 +87,11 @@ const AutoeletricaModel = {
         },
         {
             id: 7,
-            autor: "Luís Alex Silva",
-            inicial: "L",
+            autor: "Daniel Lima",
+            inicial: "D",
             tempo: "Há 1 ano",
-            texto: "Excelente escolha! O serviço correu muito bem, o senhor José foi super prestável, amável e atencioso aos detalhes, deixando um trabalho com dignos de uma oficina premium! Recomendo vivamente !",
-            linkAvaliacao: "https://share.google/OU1ZhSnrEN8A9ZzUI"
+            texto: "José é um mecânico excepcional, sempre pronto para ajudar onde for necessário. Diferente de muitos, ele não tem uma oficina fixa, mas vai até o local onde o carro precisa de assistência, trazendo praticidade e eficiência. Já cuidou de dois carros meus com total profissionalismo: em um, trocou lâmpadas e ajustou o sistema de fios para restaurar a iluminação; no outro, fez a substituição da central de fusíveis de um Megane, garantindo que tudo voltasse a funcionar perfeitamente. Além da competência e dedicação, José cobra um preço justo e é super simpático. Um verdadeiro achado para quem precisa de um mecânico de confiança!",
+            linkAvaliacao: "https://share.google/lBkxNqUKaCBK64RfY"
         },
         {
             id: 8,
