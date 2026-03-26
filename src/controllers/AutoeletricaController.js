@@ -22,7 +22,9 @@ const AutoeletricaController = {
 
     renderReview: (req, res) => {
 
-        res.render('pages/reviews');
+        const avaliacoes = AutoeletricaModel.getReviews();
+
+        res.render('pages/reviews', {avaliacoes});
     },
 
     renderContact: (req, res) => {
