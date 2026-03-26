@@ -356,7 +356,7 @@ body {
     border-radius: 24px;
     padding: 40px 30px;
     position: relative;
-    border: 1px solid #f0f0f0;
+    border: 2px solid var(--dark);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     display: flex;
     flex-direction: column;
@@ -1425,97 +1425,68 @@ body {
    PÁGINA DE SERVIÇOS — adicionar ao ficheiro CSS principal
    ============================================================ */
 
-/* --- HERO SERVIÇOS --- */
-.services-hero {
-    background: linear-gradient(135deg, rgba(15,15,15,0.97) 0%, rgba(30,30,30,0.9) 100%),
-                url('../img/Torne-sua-oficina-moderna-em-10-passos.jpg') no-repeat center center;
-    background-size: cover;
-    padding: 100px 0 80px;
-    color: var(--light);
-    position: relative;
-    overflow: hidden;
-}
-
-.services-hero::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    width: 40%; height: 100%;
-    background: repeating-linear-gradient(
-        -55deg,
-        transparent, transparent 12px,
-        rgba(243,156,18,0.04) 12px,
-        rgba(243,156,18,0.04) 13px
-    );
-    pointer-events: none;
-}
-
-.services-hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 680px;
-}
-
-.services-hero h1 {
-    font-size: clamp(2.8rem, 6vw, 4.5rem);
-    font-weight: 900;
-    line-height: 1.05;
-    margin-bottom: 20px;
-}
-
-.services-hero h1 em {
-    font-style: normal;
-    color: var(--primary);
-}
-
-.services-hero p {
-    font-size: 1.15rem;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.7;
-    max-width: 520px;
-}
-
-/* --- GRID DE SERVIÇOS --- */
-.services-full-section {
+/* ---- SECÇÃO DE SERVIÇOS ---- */
+.sp-services {
     padding: 90px 0 100px;
     background: var(--bg-body);
 }
 
-.services-full-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 28px;
+/* Cabeçalho da secção */
+.sp-section-header {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 64px;
 }
 
-/* Card de Serviço */
-.service-full-card {
+.sp-section-header h2 {
+    font-size: clamp(3rem, 4vw, 2.8rem);
+    font-weight: 900;
+    color: var(--dark);
+    letter-spacing: -1px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+}
+
+.sp-section-header h2 em {
+    font-style: normal;
+    color: var(--primary);
+}
+
+.sp-section-header p {
+    font-size: 1rem;
+    color: var(--dark);
+    line-height: 1.9;
+}
+
+/* Grid de cards */
+.sp-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 24px;
+}
+
+/* ---- CARD DE SERVIÇO ---- */
+.sp-card {
     background: #ffffff;
-    border-radius: 24px;
-    padding: 40px 32px 32px;
-    border: 1.5px solid #f0f0f0;
+    border-radius: 28px;
+    padding: 32px 28px 26px;
+    border: 2px solid var(--dark);
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 0;
     position: relative;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: sp-rise var(--card-delay, 0s) ease both;
 }
 
-/* Número de índice decorativo */
-.sfc-index {
-    position: absolute;
-    top: 20px;
-    right: 24px;
-    font-size: 3.5rem;
-    font-weight: 900;
-    color: rgba(0,0,0,0.04);
-    line-height: 1;
-    pointer-events: none;
-    transition: color 0.4s ease;
+@keyframes sp-rise {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Linha de destaque que cresce no hover (igual ao index) */
-.service-full-card::before {
+/* Linha amarela no topo que cresce no hover */
+.sp-card::before {
     content: '';
     position: absolute;
     top: 0; left: 50%;
@@ -1526,112 +1497,253 @@ body {
     transition: width 0.4s ease;
 }
 
-.service-full-card:hover::before { width: 50%; }
+.sp-card:hover::before { width: 40%; }
 
-/* Ícone */
-.sfc-icon-wrapper {
-    width: 64px;
-    height: 64px;
-    border-radius: 18px;
-    background: rgba(243,156,18,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    color: var(--primary);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    flex-shrink: 0;
+/* Ícone decorativo gigante no fundo do card */
+.sp-card-deco {
+    position: absolute;
+    bottom: -20px; right: -20px;
+    font-size: 7rem;
+    color: rgba(0,0,0,0.028);
+    pointer-events: none;
+    transition: all 0.5s ease;
+    line-height: 1;
 }
 
-/* Corpo */
-.sfc-body { flex: 1; }
-
-.sfc-body h3 {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: var(--dark);
-    margin-bottom: 10px;
-    line-height: 1.2;
-}
-
-.sfc-body p {
-    font-size: 0.97rem;
-    color: #6c757d;
-    line-height: 1.65;
-}
-
-/* Botão CTA */
-.sfc-cta {
+/* Cabeçalho do card */
+.sp-card-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 20px;
-    background: #f8f9fa;
-    border-radius: 14px;
+    margin-bottom: 26px;
+}
+
+/* Wrapper do ícone */
+.sp-card-iconbox {
+    position: relative;
+    width: 60px; height: 60px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sp-card-iconbox i {
+    position: relative;
+    z-index: 2;
+    font-size: 1.6rem;
+    color: var(--dark);
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Fundo do ícone */
+.sp-iconbox-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: rgba(243,156,18,0.1);
+    border: 1.5px solid rgba(243,156,18,0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sp-card-header-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+/* Corpo */
+.sp-card-body { margin-bottom: 20px; }
+
+.sp-card-body h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.sp-card-body p {
+    font-size: 1rem;
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+/* Lista de detalhes */
+.sp-card-details {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
+}
+
+.sp-card-details li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #888;
+    transition: color 0.3s ease;
+}
+
+.sp-card-details li i {
+    color: var(--primary);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+/* Divisor */
+.sp-card-divider {
+    height: 1px;
+    background: #f0f0f0;
+    margin-bottom: 22px;
+    transition: background 0.3s ease;
+}
+
+/* ---- RODAPÉ E BOTÃO ---- */
+.sp-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o botão */
+    margin-top: auto;
+    width: 100%;
+}
+
+.sp-card-btn {
     text-decoration: none;
     color: var(--dark);
-    font-weight: 700;
-    font-size: 0.9rem;
+    background: var(--primary); /* Cor de destaque fixa no botão */
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 24px;
+    border-radius: 50px; /* Formato de pílula (arredondado) */
+    font-size: 0.95rem;
+    width: 100%; /* Faz o botão ocupar a largura toda do card */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
+    z-index: 2; /* Garante que fica acima do ícone decorativo de fundo */
+}
+
+/* ---- RODAPÉ E NOVO BOTÃO (PREMIUM) ---- */
+.sp-card-footer {
+    display: flex;
+    justify-content: center; /* Centralizado no card */
     margin-top: auto;
+    width: 70%;
 }
 
-.sfc-cta i {
+.sp-card-btn {
+    text-decoration: none;
+    display: inline-flex; /* Diminuído: baseia-se no conteúdo agora */
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espaço sutil entre texto e flecha */
+    padding: 14px 28px; /* Padding premium e bonito */
+    background: var(--dark-grey); /* starts dark */
+    color: #ffffff; /* starts white text */
+    font-weight: 800;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    border: 2px solid transparent; /* para o highlight no hover */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 2;
+}
+
+/* Wrapper da flecha para animação */
+.sp-btn-arrow {
+    display: flex;
+    align-items: center;
+    color: var(--primary); /* Flecha já é amarela desde o início */
     font-size: 1.1rem;
-    color: #25D366;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease-out; /* Transição para o movimento horizontal */
+    transform: translateX(0); /* Posição inicial default */
 }
 
-/* --- HOVER DO CARD --- */
-.service-full-card:hover {
-    transform: translateY(-10px);
+/* Ícone de fundo decorativo (Mantido) */
+.sp-card-deco { position: absolute; bottom: -20px; right: -20px; font-size: 7rem; color: rgba(0,0,0,0.02); pointer-events: none; transition: all 0.5s ease; z-index: 0; }
+
+.sp-card:hover::before { width: 40%; }
+.sp-card:hover .sp-card-deco { color: rgba(243,156,18,0.06); transform: scale(1.1) rotate(-5deg); }
+.sp-card:hover .sp-card-iconbox i { color: #ffffff; transform: scale(1.1) rotate(-5deg); }
+.sp-card:hover .sp-iconbox-ring { background: var(--primary); border-color: var(--primary); transform: rotate(45deg); }
+.sp-card:hover .sp-card-divider { background: rgba(243,156,18,0.15); }
+
+/* ---- NOVO HOVER DO BOTÃO ---- */
+.sp-card:hover .sp-card-btn {
+    background: var(--light); /* Hover muda cor (inverte) */
+    color: var(--dark);       /* Texto muda */
+    border-color: var(--dark);/* Adiciona uma borda definida */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transform: translateY(-3px); /* Ligeiro 'lift' do botão */
+}
+
+/* ---- HOVER DOS CARDS ---- */
+.sp-card:hover {
     border-color: transparent;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.09);
+    transform: translateY(-8px);
 }
 
-.service-full-card:hover .sfc-index {
-    color: rgba(243,156,18,0.08);
+/* Ícone fica branco, fundo roda e vira amarelo */
+.sp-card:hover .sp-card-iconbox i {
+    color: #ffffff;
+    transform: scale(1.1) rotate(-5deg);
 }
 
-.service-full-card:hover .sfc-icon-wrapper {
+.sp-card:hover .sp-iconbox-ring {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: rotate(45deg);
+    box-shadow: 0 10px 20px rgba(243,156,18,0.3);
+}
+
+.sp-card:hover .sp-card-deco {
+    color: var(--primary);
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.sp-card:hover .sp-card-details li { color: #555; }
+
+.sp-card:hover .sp-card-divider { background: rgba(243,156,18,0.15); }
+
+.sp-card:hover .sp-price-value { color: var(--primary-dark); }
+
+.sp-card:hover .sp-card-btn {
     background: var(--primary);
     color: var(--dark);
-    transform: scale(1.08) rotate(-5deg);
-    box-shadow: 0 10px 24px rgba(243,156,18,0.3);
+    box-shadow: 0 6px 18px rgba(243,156,18,0.28);
 }
 
-.service-full-card:hover .sfc-cta {
-    background: var(--primary);
-    color: var(--dark);
+.sp-card:hover .sp-btn-arrow {
+    color: var(--dark);   /* A flecha brilha em amarelo/laranja */
+    transform: translateX(8px) scale(1.6); /* Desliza e cresce com impacto */
+    box-shadow: 0 0 15px rgba(243, 156, 18, 0.4); /* Brilho neon sutil */
 }
 
-.service-full-card:hover .sfc-cta i {
-    color: var(--dark);
-    transform: translateX(4px);
+/* ---- RESPONSIVIDADE ---- */
+@media (max-width: 1024px) {
+    .sp-hero-inner { grid-template-columns: 1fr; gap: 60px; }
+    .sp-float-badge { display: none; }
+    .sp-trust-sep { display: none; }
+    .sp-trust-items { gap: 4px; justify-content: flex-start; }
 }
 
-/* --- ANIMAÇÃO DE ENTRADA --- */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-.services-hero-content { animation: fadeInUp 0.7s ease both; }
-
-.service-full-card {
-    animation: fadeInUp 0.6s ease both;
-}
-
-/* Escalonamento por posição */
-.service-full-card:nth-child(1) { animation-delay: 0.05s; }
-.service-full-card:nth-child(2) { animation-delay: 0.12s; }
-.service-full-card:nth-child(3) { animation-delay: 0.19s; }
-.service-full-card:nth-child(4) { animation-delay: 0.26s; }
-.service-full-card:nth-child(5) { animation-delay: 0.33s; }
-.service-full-card:nth-child(6) { animation-delay: 0.40s; }
-
-/* --- RESPONSIVIDADE --- */
 @media (max-width: 768px) {
-    .services-hero { padding: 70px 0 60px; }
-    .services-full-grid { grid-template-columns: 1fr; }
+    .sp-hero { padding: 80px 0 70px; }
+    .sp-hero-actions { flex-direction: column; align-items: flex-start; }
+    .sp-cards-grid { grid-template-columns: 1fr; }
+    .sp-card-details { grid-template-columns: 1fr; }
+    .sp-section-header { margin-bottom: 40px; }
 }
