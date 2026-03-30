@@ -805,7 +805,7 @@ body {
 
 
 /* ============================================================
-   PÁGINA DE CONTACTO — adicionar ao ficheiro CSS principal
+   PÁGINA DE CONTACTO 
    ============================================================ */
 
 /* --- HERO CONTACTO --- */
@@ -955,7 +955,7 @@ body {
     padding: 22px 24px;
     background: #ffffff;
     border-radius: 18px;
-    border: 1.5px solid #f0f0f0;
+    border: 1.5px solid var(--dark);
     text-decoration: none;
     color: var(--dark);
     transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
