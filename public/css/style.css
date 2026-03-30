@@ -186,7 +186,7 @@ body {
     text-align: center;
     /* Gradiente sobre a imagem de fundo */
     background: linear-gradient(135deg, rgba(15,15,15,0.95) 0%, rgba(44,44,44,0.8) 100%), 
-                url('../img/Torne-sua-oficina-moderna-em-10-passos.jpg') no-repeat center center;
+                url('../img/carroDeLado.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
@@ -601,7 +601,8 @@ body {
 }
 
 .showcase-image img {
-    width: 100%;
+    width: 500px;
+    height: 350px;
     border-radius: 30px;
     box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
     transition: transform 0.5s ease;
@@ -811,7 +812,7 @@ body {
 /* --- HERO CONTACTO --- */
 .contact-hero {
     background: linear-gradient(135deg, rgba(15,15,15,0.97) 0%, rgba(30,30,30,0.9) 100%),
-                url('../img/Torne-sua-oficina-moderna-em-10-passos.jpg') no-repeat center center;
+                url('../img/carroDeLado.jpg') no-repeat center center;
     background-size: cover;
     padding: 100px 0 80px;
     color: var(--light);
