@@ -74,6 +74,10 @@
                                 </div>
                                 <% }); %>
                         </div>
+                        <div class="hero-actions" style="padding-top: 30px;">
+                            <a href="/servicos" class="btn-hero-main" style="margin: 0 90px 0; text-align: center;">
+                                VER OUTROS SERVIÇOS</a>
+                        </div>
                     </div>
                 </section>
 
@@ -86,7 +90,7 @@
                         </div>
 
                         <div class="reviews-grid">
-                            <% avaliacoes.forEach(avaliacao=> { %>
+                            <% avaliacoes.slice(0, 3).forEach(avaliacao=> { %>
                                 <a href="<%= avaliacao.linkAvaliacao %>" target="_blank" class="review-card">
                                     <i class="bi bi-google google-icon"></i>
 
@@ -119,7 +123,8 @@
 
                         <div class="hero-actions" style="padding-top: 40px;">
                             <!-- O mesmo estilo de botao da 1 secao -->
-                            <a href="/avaliacoes" class="btn-hero-main">VER OUTRAS AVALIAÇÕES</a>
+                            <a href="/avaliacoes" class="btn-cta" style="margin: 0 90px 0; text-align: center;">VER
+                                OUTRAS AVALIAÇÕES</a>
                         </div>
                     </div>
                 </section>
