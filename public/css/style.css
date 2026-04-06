@@ -2169,25 +2169,7 @@ body {
     align-items: start;
 }
 
-/* Primeiro card ocupa as 2 colunas — destaque editorial */
-.av-card:first-child {
-    grid-column: span 2;
-}
 
-/* Dentro do card destacado, o texto fica maior */
-.av-card:first-child .av-card-text {
-    font-size: 1rem;
-}
-
-/* Quinto card também ocupa 2 colunas */
-.av-card:nth-child(7) {
-    grid-column: span 2;
-}
-
-/* Texto do quinto card também fica maior */
-.av-card:nth-child(7) .av-card-text {
-    font-size: 1rem;
-}
 
 /* ---- CARD DE AVALIAÇÃO ---- */
 .av-card {
