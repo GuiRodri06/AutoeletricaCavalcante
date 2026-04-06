@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<%- include('../partials/head') %>
+
+    <body>
+        <%- include('../partials/header') %>
+
+            <main>
+                <section class="hero-section">
+                    <div class="container">
+                        <div class="hero-content">
+                            <h1>SEU CARRO PAROU? <br> <span>A GENTE RESOLVE.</span></h1>
+                            <p>
+                                Especialistas em injeção eletrônica, baterias e motor de arranque.
+                                Tecnologia de ponta para garantir que você nunca fique na mão.
+                            </p>
+                            <div class="hero-actions">
+                                <a href="#servicos" class="btn-hero-outline">
+                                    <i class="bi bi-gear-fill"></i> NOSSOS SERVIÇOS
+                                </a>
+                                <a href="https://wa.me/<%= empresa.whatsapp %>" target="_blank" class="btn-hero-main">
+                                    <i class="bi bi-whatsapp"></i> ORÇAMENTO AGORA
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="cta-emergency">
+                    <div class="container">
+                        <div class="cta-box">
+                            <h2>Precisa de Socorro Elétrico?</h2>
+                            <p>Atendimento rápido em toda a região. Não perca tempo!</p>
+                            <a href="tel:+<%= empresa.whatsapp %>" class="btn-cta">PREMIR AQUI PARA TELEFONAR</a> <br>
+                            <a href="/contacto" class="outher-cnt">Outros meios de contactos</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="servicos" class="premium-basic-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2>SERVIÇOS ESPECIALIZADOS</h2>
+                            <div class="section-title-line"></div>
+                            <p>Tecnologia de ponta e diagnóstico preciso para o seu veículo.</p>
+                        </div>
+
+                        <div class="services-wrapper">
+                            <% servicos.slice(0, 4).forEach(servico=> { %>
+                                <div class="service-card-v2">
+                                    <div class="card-line-top"></div>
+
+                                    <div class="card-icon-wrapper">
+                                        <i class="bi <%= servico.icone %> icon-main"></i>
+                                        <div class="icon-circle-bg"></div>
+                                    </div>
+
+                                    <div class="card-body-v2">
+                                        <h4>
+                                            <%= servico.titulo %>
+                                        </h4>
+                                        <p>
+                                            <%= servico.descricao %>
+                                        </p>
+                                    </div>
+
+                                    <div class="card-footer-v2">
+                                        <a href="/contacto" class="btn-action-simple">
+                                            <span>Agendar agora</span>
+                                            <i class="bi bi-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <% }); %>
+                        </div>
+                        <div class="hero-actions" style="padding-top: 30px;">
+                            <a href="/servicos" class="btn-hero-main2" style="margin: 0 90px 0; text-align: center;">
+                                VER OUTROS SERVIÇOS</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="avaliacoes" class="reviews-section">
+                    <div class="container">
+                        <div class="section-header text-light">
+                            <h2>O QUE DIZEM OS NOSSOS CLIENTES</h2>
+                            <div class="section-title-line"></div>
+                            <p>A confiança de quem já passou pela nossa oficina</p>
+                        </div>
+
+                        <div class="reviews-grid">
+                            <% avaliacoes.slice(0, 3).forEach(avaliacao=> { %>
+                                <a href="<%= avaliacao.linkAvaliacao %>" target="_blank" class="review-card">
+                                    <i class="bi bi-google google-icon"></i>
+
+                                    <div class="review-stars">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+
+                                    <p class="review-text">"<%= avaliacao.texto %>"</p>
+
+                                    <div class="review-author">
+                                        <div class="author-avatar">
+                                            <%= avaliacao.inicial %>
+                                        </div>
+                                        <div class="author-info">
+                                            <h5>
+                                                <%= avaliacao.autor %>
+                                            </h5>
+                                            <span>
+                                                <%= avaliacao.tempo %>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <% }); %>
+                        </div>
+
+                        <div class="hero-actions" style="padding-top: 40px;">
+                            <!-- O mesmo estilo de botao da 1 secao -->
+                            <a href="/avaliacoes" class="btn-cta" style="margin: 0 90px 0; text-align: center;">VER
+                                OUTRAS AVALIAÇÕES</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="showcase-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2>EXCELÊNCIA EM CADA DETALHE</h2>
+                            <div class="section-title-line"></div>
+                            <p>Conheça o padrão de qualidade que aplicamos em cada veículo</p>
+                        </div>
+
+                        <div class="showcase-container">
+                            <% showcase.forEach((item, index)=> { %>
+                                <div class="showcase-row">
+                                    <div class="showcase-image">
+                                        <img src="<%= item.imagem %>" alt="<%= item.titulo %>">
+                                        <span class="showcase-tag">
+                                            <%= item.tag %>
+                                        </span>
+                                    </div>
+                                    <div class="showcase-content">
+                                        <span class="step-number">0<%= index + 1 %></span> <br>
+                                        <h3>
+                                            <%= item.titulo %>
+                                        </h3>
+                                        <p>
+                                            <%= item.descricao %>
+                                        </p>
+                                        <div class="showcase-features">
+                                            <span><i class="bi bi-check2-circle"></i> Peças Originais</span>
+                                            <span><i class="bi bi-shield-check"></i> Garantia de Serviço</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% }); %>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <%- include('../partials/footer') %>
+    </body>
+
+</html>

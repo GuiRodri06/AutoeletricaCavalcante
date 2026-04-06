@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<%- include('../partials/head') %>
+
+    <body>
+        <%- include('../partials/header') %>
+
+            <main>
+
+                <!-- ===== HERO ===== -->
+                <section class="contact-hero av-hero">
+                    <div class="container">
+                        <div class="contact-hero-content">
+                            <div class="hero-badge">
+                                <i class="bi bi-star-fill"></i> AVALIAÇÕES REAIS
+                            </div>
+                            <h1>O que dizem os<br><em>nossos clientes.</em></h1>
+                            <p>
+                                Transparência total. Todas as avaliações são reais e publicadas
+                                diretamente no Google pelos nossos clientes.
+                            </p>
+                            <div class="hero-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">4.9</span>
+                                    <span class="stat-label">Nota no Google</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">+<%= avaliacoes.length * 10 %></span>
+                                    <span class="stat-label">Avaliações</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">100%</span>
+                                    <span class="stat-label">Avaliações reais</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== BARRA DE RATING GERAL ===== -->
+                <div class="av-rating-bar">
+                    <div class="container">
+                        <div class="av-rating-inner">
+
+                            <div class="av-rating-score">
+                                <span class="av-score-big">4.9</span>
+                                <div class="av-score-right">
+                                    <div class="av-stars-row">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                    <span>Baseado em <%= avaliacoes.length * 10 %>+ avaliações</span>
+                                </div>
+                            </div>
+
+                            <div class="av-rating-bars">
+                                <div class="av-rbar-item">
+                                    <span>5 <i class="bi bi-star-fill"></i></span>
+                                    <div class="av-rbar-track">
+                                        <div class="av-rbar-fill" style="width:97%"></div>
+                                    </div>
+                                    <span class="av-rbar-pct">97%</span>
+                                </div>
+                                <div class="av-rbar-item">
+                                    <span>4 <i class="bi bi-star-fill"></i></span>
+                                    <div class="av-rbar-track">
+                                        <div class="av-rbar-fill" style="width:2%"></div>
+                                    </div>
+                                    <span class="av-rbar-pct">2%</span>
+                                </div>
+                                <div class="av-rbar-item">
+                                    <span>1 <i class="bi bi-star-fill"></i></span>
+                                    <div class="av-rbar-track">
+                                        <div class="av-rbar-fill av-rbar-low" style="width:1%"></div>
+                                    </div>
+                                    <span class="av-rbar-pct">1%</span>
+                                </div>
+                            </div>
+
+                            <a href="https://share.google/YY2ExnyVnOk9NdA9X" target="_blank" class="av-google-btn">
+                                <i class="bi bi-google"></i>
+                                Ver no Google
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== GRID DE AVALIAÇÕES ===== -->
+                <section class="av-section">
+                    <div class="container">
+
+                        <div class="av-section-header">
+                            <div class="sp-section-tag">
+                                <i class="bi bi-chat-quote-fill"></i>
+                                Avaliações verificadas
+                            </div>
+                            <h2>O que dizem sobre nós,<br><em>sem filtros.</em></h2>
+                        </div>
+
+                        <div class="av-grid">
+                            <% avaliacoes.forEach((avaliacao, index)=> { %>
+                                <a href="<%= avaliacao.linkAvaliacao %>" target="_blank" class="av-card">
+
+                                    <!-- Ícone do Google -->
+                                    <div class="av-card-google">
+                                        <i class="bi bi-google"></i>
+                                    </div>
+
+                                    <!-- Estrelas -->
+                                    <div class="av-card-stars">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+
+                                    <!-- Texto -->
+                                    <p class="av-card-text">"<%= avaliacao.texto %>"</p>
+
+                                    <!-- Rodapé: autor -->
+                                    <div class="av-card-footer">
+                                        <div class="av-card-avatar">
+                                            <%= avaliacao.inicial %>
+                                        </div>
+                                        <div class="av-card-author">
+                                            <strong>
+                                                <%= avaliacao.autor %>
+                                            </strong>
+                                            <span>
+                                                <%= avaliacao.tempo %>
+                                            </span>
+                                        </div>
+                                        <div class="av-card-verified">
+                                            <i class="bi bi-patch-check-fill"></i>
+                                            Verificado
+                                        </div>
+                                    </div>
+
+                                </a>
+                                <% }); %>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- ===== CTA: DEIXAR AVALIAÇÃO ===== -->
+                <section class="av-cta">
+                    <div class="container">
+                        <div class="av-cta-inner">
+                            <div class="av-cta-left">
+                                <i class="bi bi-pencil-square av-cta-icon"></i>
+                                <div>
+                                    <h2>Já foi cliente?<br><em>Conte a sua experiência.</em></h2>
+                                    <p>A sua avaliação ajuda outros motoristas a encontrar um serviço de
+                                        confiança.</p>
+                                </div>
+                            </div>
+                            <a href="https://share.google/YY2ExnyVnOk9NdA9X" target="_blank" class="av-cta-btn">
+                                <i class="bi bi-google"></i>
+                                Deixar avaliação no Google
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== SOCORRO ELETRICO ===== -->
+                <section class="cta-emergency">
+                    <div class="container">
+                        <div class="cta-box">
+                            <h2>Precisa de Socorro Elétrico?</h2>
+                            <p>Atendimento rápido em toda a região. Não perca tempo!</p>
+                            <a href="tel:+<%= empresa.whatsapp %>" class="btn-cta">PREMIR AQUI PARA TELEFONAR</a> <br>
+                        </div>
+                    </div>
+                </section>
+
+
+            </main>
+
+            <%- include('../partials/footer') %>
+    </body>
+
+</html>

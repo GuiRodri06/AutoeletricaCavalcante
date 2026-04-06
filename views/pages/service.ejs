@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<%- include('../partials/head') %>
+
+    <body>
+        <%- include('../partials/header') %>
+
+            <main>
+
+                <!-- ===== HERO ===== -->
+                <!-- Css do hero do contact -->
+                <section class="contact-hero">
+                    <div class="container">
+                        <div class="contact-hero-content">
+                            <div class="hero-badge">
+                                <i class="bi bi-headset"></i> TODOS OS NOSSOS SERVIÇOS
+                            </div>
+                            <h1>Soluções completas.<br><em>Para o seu carro.</em></h1>
+                            <p>
+                                Diagnóstico computadorizado de precisão, peças originais
+                                e mão-de-obra especializada. Disponíveis 24 horas por dia,
+                                todos os dias do ano.
+                            </p>
+                            <div class="hero-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">24h</span>
+                                    <span class="stat-label">Disponibilidade</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">&lt;30min</span>
+                                    <span class="stat-label">Resposta rápida</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">+500</span>
+                                    <span class="stat-label">Clientes satisfeitos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== SERVIÇOS ===== -->
+                <section id="servicos" class="sp-services">
+                    <div class="container">
+
+                        <div class="sp-section-header">
+                            <h2>Tudo o que o seu veículo precisa,<br><em>num só lugar.</em></h2>
+                            <p>Cada serviço é executado com equipamentos de diagnóstico digital e peças homologadas pelo
+                                fabricante.</p>
+                        </div>
+
+                        <div class="sp-cards-grid">
+                            <% allServices.forEach((servico, index)=> { %>
+
+                                <div class="sp-card" style="--card-delay: <%= index * 0.1 %>s">
+
+                                    <div class="sp-card-header">
+                                        <div class="sp-card-iconbox">
+                                            <i class="bi <%= servico.icone %>"></i>
+                                            <div class="sp-iconbox-ring"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="sp-card-body">
+                                        <h3>
+                                            <%= servico.titulo %>
+                                        </h3>
+                                        <p>
+                                            <%= servico.descricao %>
+                                        </p>
+                                    </div>
+
+                                    <ul class="sp-card-details">
+                                        <li><i class="bi bi-check2"></i> Diagnóstico incluído</li>
+                                        <li><i class="bi bi-check2"></i> Peças com garantia</li>
+                                        <li><i class="bi bi-check2"></i> Orçamento sem compromisso</li>
+                                        <li><i class="bi bi-check2"></i> Atendimento 24 horas</li>
+                                    </ul>
+
+                                    <div class="sp-card-divider"></div>
+
+                                    <div class="sp-card-footer">
+                                        <a href="https://wa.me/<%= empresa.whatsapp %>?text=<%= encodeURIComponent('Olá! Gostaria de um orçamento para: ' + servico.titulo + '. Pode ajudar-me?') %>"
+                                            target="_blank" class="sp-card-btn">
+                                            <span>Pedir orçamento</span>
+                                            <div class="sp-btn-arrow">
+                                                <i class="bi bi-arrow-right"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="sp-card-deco" aria-hidden="true">
+                                        <i class="bi <%= servico.icone %>"></i>
+                                    </div>
+
+                                </div>
+
+                                <% }); %>
+
+                        </div>
+                </section>
+
+            </main>
+
+            <%- include('../partials/footer') %>
+    </body>
+
+</html>
