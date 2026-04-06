@@ -82,8 +82,21 @@
                                 </a>
 
                                 <!-- Localização -->
-                                <a href="https://www.google.com/maps?q=<%= empresa.coordenadas %>" target="_blank"
-                                    class="channel-card">
+                                <a href="sms:+<%= empresa.whatsapp %>" class="channel-card">
+                                    <div class="channel-icon ch-sms">
+                                        <i class="bi bi-chat-left-text-fill"></i>
+                                    </div>
+                                    <div class="channel-info">
+                                        <div class="channel-label">SMS</div>
+                                        <div class="channel-value">+<%= empresa.whatsapp %>
+                                        </div>
+                                        <div class="channel-sub">Envie uma mensagem de texto</div>
+                                    </div>
+                                    <i class="bi bi-arrow-right channel-arrow"></i>
+                                </a>
+
+                                <!-- Localização -->
+                                <a href="https://wa.me/<%= empresa.whatsapp %>" target="_blank" class="channel-card">
                                     <div class="channel-icon ch-maps">
                                         <i class="bi bi-geo-alt-fill"></i>
                                     </div>
@@ -92,7 +105,7 @@
                                         <div class="channel-value">
                                             <%= empresa.endereco %>
                                         </div>
-                                        <div class="channel-sub">Ver no Google Maps</div>
+                                        <div class="channel-sub">Entre em contacto que vamos até você</div>
                                     </div>
                                     <i class="bi bi-arrow-right channel-arrow"></i>
                                 </a>
@@ -116,25 +129,25 @@
                                     </p>
                                 </div>
 
-                                <!-- Card Mapa -->
-                                <div class="map-card">
-                                    <div class="map-placeholder">
-                                        <div class="map-pin-icon">
-                                            <i class="bi bi-geo-alt-fill"></i>
-                                        </div>
-                                        <p>
-                                            <%= empresa.endereco %>
-                                        </p>
+                                <div class="mobile-service-card">
+                                    <div class="mobile-icon-wrapper">
+                                        <i class="bi bi-truck-front-fill"></i>
                                     </div>
-                                    <div class="map-info">
-                                        <div class="map-address">
-                                            <%= empresa.endereco %>
+                                    <div class="mobile-service-content">
+                                        <h3>O seu carro não anda? <br><span>Nós vamos até si!</span></h3>
+                                        <p>
+                                            A nossa base central é em <strong>Coimbra</strong>, mas não precisa de se
+                                            preocupar com despesas de reboque.
+                                            Temos uma viatura de assistência móvel totalmente equipada para resolver a
+                                            maioria dos problemas elétricos diretamente no local da avaria.
+                                        </p>
+                                        <div class="mobile-badges">
+                                            <span class="badge"><i class="bi bi-geo-alt-fill"></i> Sede em
+                                                Coimbra</span>
+                                            <span class="badge"><i class="bi bi-tools"></i> Reparação no Local</span>
+                                            <span class="badge"><i class="bi bi-lightning-charge-fill"></i> Rápida
+                                                Resposta</span>
                                         </div>
-                                        <a href="https://www.google.com/maps?q=<%= empresa.coordenadas %>"
-                                            target="_blank" class="btn-directions">
-                                            <i class="bi bi-signpost-split-fill"></i>
-                                            Indicações
-                                        </a>
                                     </div>
                                 </div>
 
