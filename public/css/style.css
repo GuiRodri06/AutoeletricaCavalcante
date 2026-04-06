@@ -391,7 +391,7 @@ body {
     margin: 0 auto 40px auto;
     font-size: 1.2rem;
     opacity: 0.9;
-    color: var(--light) !important; /* Força o texto a ser branco aqui */
+    color: var(--light) !important; 
 }
 
 .hero-actions {
@@ -409,6 +409,7 @@ body {
     border-radius: 50px;
     font-weight: bold;
     transition: 0.3s;
+    box-sizing: border-box;
 }
 
 .btn-hero-outline {
@@ -419,6 +420,7 @@ body {
     border-radius: 50px;
     font-weight: bold;
     transition: 0.3s;
+    box-sizing: border-box;
 }
 
 .btn-hero-main:hover { background: var(--light); }
@@ -650,7 +652,7 @@ body {
     color: var(--dark);
 }
 
-.btn-hero-main {
+.btn-hero-main2 {
     display: inline-block;
     background: var(--primary);
     color: var(--dark);
@@ -663,7 +665,7 @@ body {
     transition: 0.3s;
 }
 
-.btn-hero-main:hover {
+.btn-hero-main2:hover {
     background: var(--dark-grey);
     color: var(--light);
     transform: translateY(-3px);

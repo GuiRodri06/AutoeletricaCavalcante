@@ -3,36 +3,84 @@
 const AutoeletricaModel = {
     getCompanyData: () => ({
         nome: "Centro Automotivo 24 Horas",
-        whatsapp: "5511999999999",
-        endereco: "Rua das Baterias, 123",
+        whatsapp: "351926294865",
+        endereco: "Coimbra - Portugal",
         horario: "Segunda a Segunda: Atendimento 24 horas",
-        coordenadas: "-23.5505,-46.6333"
+        coordenadas: "0"
     }),
 
     getServices: () => [
         {
             id: 1,
             titulo: "Injeção Eletrônica",
-            icone: "bi-cpu-fill", // Ícone de processador/tecnologia
-            descricao: "Diagnóstico computadorizado de precisão para falhas e performance."
+            icone: "bi-cpu-fill",
+            descricao: "Diagnóstico computadorizado de precisão para falhas de motor e otimização de performance."
         },
         {
             id: 2,
             titulo: "Baterias e Carga",
-            icone: "bi-battery-charging", // Ícone de bateria carregando
-            descricao: "Substituição e testes de alternador com equipamentos de ponta."
+            icone: "bi-battery-charging",
+            descricao: "Substituição de baterias e testes de alternador com equipamentos de diagnóstico de ponta."
         },
         {
             id: 3,
             titulo: "Ar-Condicionado",
-            icone: "bi-snow2", // Ícone de floco de neve estilizado
-            descricao: "Higienização, recarga de gás e manutenção completa do sistema."
+            icone: "bi-snow2",
+            descricao: "Manutenção completa: higienização, recarga de gás e reparação do sistema de climatização."
         },
         {
             id: 4,
-            titulo: "Motores e Elétrica",
-            icone: "bi-lightning-charge-fill", // Ícone de energia/raio
-            descricao: "Reparo em motores de partida, alternadores e chicotes elétricos."
+            titulo: "Motores de Arranque",
+            icone: "bi-lightning-charge-fill",
+            descricao: "Reparo especializado em motores de partida, alternadores e sistemas de ignição."
+        },
+        {
+            id: 5,
+            titulo: "Vidros e Travas",
+            icone: "bi-window-split", 
+            descricao: "Reparação de elevadores de vidros elétricos, comandos e sistemas de fecho centralizado."
+        },
+        {
+            id: 6,
+            titulo: "Linha Ligeira e Pesada",
+            icone: "bi-truck", 
+            descricao: "Assistência elétrica completa para carros, autocarros, camiões e frotas comerciais."
+        },
+        {
+            id: 7,
+            titulo: "Iluminação e Ópticas",
+            icone: "bi-lightbulb-fill",
+            descricao: "Instalação de lâmpadas LED, reparação de circuitos e focagem de faróis."
+        },
+        {
+            id: 8,
+            titulo: "Diagnóstico Geral",
+            icone: "bi-search",
+            descricao: "Check-up completo da parte elétrica para garantir a segurança e fiabilidade do seu veículo."
+        },
+        {
+            id: 9,
+            titulo: "Segurança e Alarmes",
+            icone: "bi-shield-lock-fill",
+            descricao: "Instalação e reparação de sistemas de imobilização, alarmes e rastreadores."
+        },
+        {
+            id: 10,
+            titulo: "Sensores e Câmeras",
+            icone: "bi-eye-fill",
+            descricao: "Montagem de sensores de estacionamento e câmeras de marcha-atrás para maior segurança."
+        },
+        {
+            id: 11,
+            titulo: "ABS e Airbags",
+            icone: "bi-exclamation-octagon-fill",
+            descricao: "Diagnóstico e reparação de módulos eletrônicos de segurança ativa e passiva."
+        },
+        {
+            id: 12,
+            titulo: "Chicotes Elétricos",
+            icone: "bi-node-plus-fill",
+            descricao: "Reparação e reconstrução de cablagens danificadas por curto-circuito ou desgaste."
         }
     ],
 
@@ -43,7 +91,7 @@ const AutoeletricaModel = {
             inicial: "M", // Letra para o avatar
             tempo: "Há 1 semana",
             texto: "O senhor José já nos salvou várias vezes! Encontramos ele aqui no Google e não largamos mais. Levamos o carro na Modas e eles fizeram diagnóstico, ficamos sem carro por quase 2 semanas, trocaram sensores e nada resolvido. Levamos no senhor José, ele resolveu esse problema e outros aparecerem nos últimos meses. Ele sempre encontra disponibilidade, faz o serviço muito bem feito, e super honesto e nos mantém informados se encontra nas peças/manutenção. Super recomendo!",
-            linkAvaliacao: "https://share.google/0sV2H0LntZKtEUqJJ" 
+            linkAvaliacao: "https://share.google/0sV2H0LntZKtEUqJJ"
         },
         {
             id: 2,
